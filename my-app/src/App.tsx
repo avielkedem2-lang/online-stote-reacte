@@ -9,8 +9,9 @@ import { useProductsStore } from './components/Store/StoreProducts.ts'
 
 function App() {
   const [products] = useFetch("https://fakestoreapi.com/products")
+  console.log(products);
+  const addProducts = useProductsStore(s => s.setProducts)
   if (Array.isArray(products)) {
-    const addProducts = useProductsStore(s => s.setProducts)
     addProducts(products)
   }
 
