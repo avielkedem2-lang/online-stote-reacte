@@ -1,0 +1,11 @@
+
+
+
+.details{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    /* border: black 5px solid; */
+    height: 100vh;
+}

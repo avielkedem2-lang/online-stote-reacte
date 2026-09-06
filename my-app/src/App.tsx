@@ -1,11 +1,11 @@
 import { Route, Routes } from 'react-router'
 import './App.css'
 import Home from './components/pages/Home.tsx'
-import ProductDetail from './components/pages/ProductDetail.tsx'
 import Favorites from './components/pages/Favorites.tsx'
 import Layout from './components/Layout/Layout.tsx'
 import { useFetch } from './components/Hooke/useFetch.ts'
 import { useProductsStore } from './components/Store/StoreProducts.ts'
+import ProductDetailPage from './components/pages/ProductDetailPage.tsx'
 
 function App() {
   const [products] = useFetch("https://fakestoreapi.com/products")
@@ -21,7 +21,7 @@ function App() {
         <Route element={<Layout />}>
           <Route path='/' element={<Home />} />
           <Route path='favorites' element={<Favorites />} />
-          <Route path='products/:id' element={<ProductDetail />} />
+          <Route path='products/:id' element={<ProductDetailPage />} />
         </Route>
         <Route path='*' element={"404 not found"} />
       </Routes>

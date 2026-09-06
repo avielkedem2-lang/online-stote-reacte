@@ -1,0 +1,42 @@
+.card {
+    display: flex;
+    height: 90%;
+    width: 90%;
+    border: solid 3px black;
+}
+
+
+.img-product{
+    display: flex;
+    justify-content: center;    
+    align-items: center;
+    border: green solid 3px;
+    height: 100%;
+    width: 80%;
+}
+
+
+
+.img {
+    padding: 30px;
+    height: 60%;
+    width: 60%;
+}
+
+
+.description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border: blue solid 3px;
+    height: 100%;
+
+}
+
+
+.but-category {
+
+    width: 20%;
+    height: 10%;
+
+}
