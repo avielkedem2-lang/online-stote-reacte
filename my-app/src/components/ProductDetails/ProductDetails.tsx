@@ -1,6 +1,8 @@
 import { Link, useParams } from "react-router"
 import { useFetch } from "../Hooke/useFetch"
 import "./ProductsDetails.css"
+import { useFavorite } from "../Store/storeFavorites"
+import { useMemo } from "react"
 
 
 type Product = {
@@ -16,8 +18,24 @@ type Product = {
 export default function ProductDetails() {
     const { id } = useParams()
     const [products] = useFetch<Product>(`https://fakestoreapi.com/products/${id}`)
-    console.log(products);
-    if (typeof (products) !== "object") return (<>error</>)
+    
+
+    const favorites = useFavorite(s => s.favorites)
+    const addFavorite = useFavorite(s => s.addFavorite)
+    const removeFavorite = useFavorite(s => s.removeFavorite)
+
+    const product = useMemo(() =>  favorites.find((p) => { return p.id === Number(id) }) , [favorites])
+    const text = product ? "Remove" : "Add to Favorite"
+    const isInFavorite = () => {
+        if (product) {
+            removeFavorite(product)
+        } else {
+            addFavorite(products)
+        }
+
+    }
+    if (typeof (products) !== "object") return (<>error</>);
+
     return (
         <div className="card">
             <section className="img-product">
@@ -33,12 +51,11 @@ export default function ProductDetails() {
                     <button>
                         <Link to={"/"}>back to home</Link>
                     </button>
-                    <button>
-                        add to favorites
+                    <button onClick={isInFavorite}>
+                        {text}
                     </button>
                 </section>
             </section>
-
         </div>
     )
 
