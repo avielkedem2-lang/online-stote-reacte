@@ -1,5 +1,5 @@
 import { useProductsStore } from "../Store/StoreProducts";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 
 
@@ -13,13 +13,11 @@ type Product = {
 }
 
 
-export function useFetch(url: string) {
-    const products = useProductsStore(s => s.products)
-    const setProducts = useProductsStore(s => s.setProducts)
-
+export function useFetch<T>(url: string) {
+    const [products, setProducts] = useState<T>()
     useEffect(() => {
         const fetchProducts = async () => {
-            const {data} = await axios.get<Product[]>(url)
+            const {data} = await axios.get<T >(url)
             setProducts(data)
         }
         fetchProducts()

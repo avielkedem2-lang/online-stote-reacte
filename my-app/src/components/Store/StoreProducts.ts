@@ -14,6 +14,7 @@ type ProductsTypes = {
     setProducts: (products: Product[]) => void,
 }
 
+
 export const useProductsStore = create<ProductsTypes>((set) => ({
     products: [],
     setProducts: (products: Product[]) => set(() => ({products})) 
