@@ -4,9 +4,10 @@ import Home from './components/pages/Home.tsx'
 import ProductDetail from './components/pages/ProductDetail.tsx'
 import Favorites from './components/pages/Favorites.tsx'
 import Layout from './components/Layout/Layout.tsx'
+import { useFetch } from './components/Hooke/useFetch.ts'
 
 function App() {
-
+  useFetch("https://fakestoreapi.com/products")
   return (
     <>
       <Routes>
