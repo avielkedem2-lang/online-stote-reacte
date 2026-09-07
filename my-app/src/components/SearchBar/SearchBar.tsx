@@ -5,8 +5,9 @@ import "./searchBar.css"
 
 export default function SearchBar() {
     const products = useProductsStore(s => s.products)
-    const [title, setTitle] = useState<string>()
-    const productFound = useMemo(() => products.filter((p) => p.title.toLowerCase().includes(title!.toLowerCase())), [title])
+
+    const [title, setTitle] = useState<string>("0000000000000000000000000000000000")
+    const productFound = useMemo(() => products.filter((p) => p.title.toLowerCase().includes(title.toLowerCase())), [title])
 
     const input = useRef<HTMLInputElement>(null)
     useEffect(() => {

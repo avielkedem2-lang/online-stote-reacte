@@ -16,16 +16,16 @@ function App() {
   }
 
   return (
-    <>
+    <div>
       <Routes>
         <Route element={<Layout />}>
           <Route path='/' element={<Home />} />
-          <Route path='favorites' element={<Favorites />} />
-          <Route path='products/:id' element={<ProductDetailPage />} />
+          <Route path='/favorites' element={<Favorites />} />
+          <Route path='/products/:id' element={<ProductDetailPage />} />
         </Route>
         <Route path='*' element={"404 not found"} />
       </Routes>
-    </>
+    </div>
   )
 }
 
