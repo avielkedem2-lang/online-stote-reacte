@@ -1,5 +1,7 @@
 import { Link } from "react-router"
 import "./ProductCard.css"
+import { useFavorite } from "../Store/storeFavorites"
+import { useMemo } from "react"
 
 
 type Product = {
@@ -12,6 +14,19 @@ type Product = {
 }
 
 export default function ProductCard(props: Product) {
+    const favorites = useFavorite(s => s.favorites)
+    const addFavorite = useFavorite(s => s.addFavorite)
+    const removeFavorite = useFavorite(s => s.removeFavorite)
+    const product = useMemo(() => favorites.find((p) => { return p.id === props.id }), [favorites])
+    const hart = product ? "❤️" : "♡"
+    const isInFavorite = () => {
+        if (product) {
+            removeFavorite(product)
+        } else {
+            addFavorite(props)
+        }
+
+    }
     return (
         <div className="card">
             <Link to={`/products/${props.id}`}>
@@ -19,7 +34,7 @@ export default function ProductCard(props: Product) {
             </Link>
             <h4>{props.title}</h4>
             <p>{props.price}</p>
-            <button className="hart">♡</button>
+            <button onClick={isInFavorite} className="hart">{hart}</button>
 
         </div>
     )
