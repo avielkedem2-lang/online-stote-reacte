@@ -1,0 +1,10 @@
+
+
+.cards-search{
+    /* padding: 10px; */
+    padding-left: 20px;
+    display: grid;
+    background-color: lightblue;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}

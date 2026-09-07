@@ -17,7 +17,8 @@ type Product = {
 
 export default function ProductDetails() {
     const { id } = useParams()
-    const [products] = useFetch<Product>(`https://fakestoreapi.com/products/${id}`)
+    const [products] = useFetch<Product>(`https://fakestoreapi.com/products/${id}`) 
+    
     
 
     const favorites = useFavorite(s => s.favorites)
@@ -30,6 +31,7 @@ export default function ProductDetails() {
         if (product) {
             removeFavorite(product)
         } else {
+            if (typeof(products) === "object")
             addFavorite(products)
         }
 
