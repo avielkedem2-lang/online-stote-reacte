@@ -28,14 +28,24 @@ export default function ProductCard(props: Product) {
 
     }
     return (
-        <div className="card">
-            <Link to={`/products/${props.id}`}>
-                <img className="img" src={props.image} alt="image" />
-            </Link>
-            <h4>{props.title}</h4>
-            <p>{props.price}</p>
-            <button onClick={isInFavorite} className="hart">{hart}</button>
+        <div className="card1">
+            <section className="the-card">
+                <section className="link-for-details1">
+                    <Link to={`/products/${props.id}`}>
+                        <img className="img1" src={props.image} alt="image" />
+                    </Link>
+                </section>
 
+                <section className="inf">
+                    <section>
+                        <h4>{props.title}</h4>
+                        <p className="price">{props.price}</p>
+                    </section>
+                    <section>
+                        <button onClick={isInFavorite} className="hart">{hart}</button>
+                    </section>
+                </section>
+            </section>
         </div>
     )
 }

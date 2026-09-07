@@ -16,7 +16,7 @@ export function useFetch<T>(url: string) {
     const [products, setProducts] = useState<T>()
     useEffect(() => {
         const fetchProducts = async () => {
-            const {data} = await axios.get<T >(url)
+            const { data } = await axios.get<T>(url)
             setProducts(data)
         }
         fetchProducts()
