@@ -3,6 +3,7 @@ import Header from "../Header/Header";
 import "./layout.css"
 import { ThemeContext } from "../context/ThemeContext";
 import { useContext, useState } from "react";
+import Footer from "../footer/Footer";
 
 export default function Layout() {
 
@@ -14,6 +15,7 @@ export default function Layout() {
       <div className={status}>
         <Header />
         <Outlet />
+        <Footer/>
       </div>
     </ThemeContext.Provider>
   )
