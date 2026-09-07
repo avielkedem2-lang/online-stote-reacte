@@ -1,24 +1,35 @@
 .card {
-    display: flex;
-    height: 90%;
+    font-family: sans-serif;
+    height: 80%;
     width: 90%;
-    border: solid 3px black;
+
 }
 
 
-.img-product{
-    display: flex;
-    justify-content: center;    
-    align-items: center;
-    border: green solid 3px;
+.card-details {
+    /* padding: 10px; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     height: 100%;
-    width: 80%;
+    width: 100%;
+}
+
+
+
+.img-product {
+    margin: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: lightgray solid 3px;
+    height: 85%;
+    width: 85%;
 }
 
 
 
 .img {
-    padding: 30px;
+    /* padding: 30px; */
     height: 60%;
     width: 60%;
 }
@@ -27,16 +38,48 @@
 .description {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    border: blue solid 3px;
+    justify-content: start;
     height: 100%;
 
 }
 
 
 .but-category {
-
     width: 20%;
     height: 10%;
+    background-color: white;
+    border: solid 1px rgb(117, 117, 117);
+    border-radius: 5px;
+    color: #468589;
+}
 
+
+.price-details{
+    color: #468589;
+}
+.top{
+    margin-top: 40px;
+}
+
+
+.buts{
+    display: flex;
+    justify-content: space-around;
+    /* gap: 30px; */
+    height: 10%;
+
+}
+
+
+.but{
+    background-color: white;
+    height: 100%;
+    background-color: #468589;
+    color: white;
+}
+
+.but:hover{
+    cursor: pointer;
+    background-color: white;
+    color: #468589;
 }

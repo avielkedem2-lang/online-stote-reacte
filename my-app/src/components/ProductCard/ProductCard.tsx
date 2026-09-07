@@ -39,7 +39,7 @@ export default function ProductCard(props: Product) {
                 <section className="inf">
                     <section>
                         <h4>{props.title}</h4>
-                        <p className="price">{props.price}</p>
+                        <p className="price">${props.price}</p>
                     </section>
                     <section>
                         <button onClick={isInFavorite} className="hart">{hart}</button>
